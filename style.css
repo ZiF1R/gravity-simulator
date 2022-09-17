@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+main h2 {
+  font-weight: 300;
+  font-size: 28px;
+  text-align: left;
+  width: 100%;
+}
+
+nav {
+  padding: 15px 25px;
+}
+
+canvas {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.logo {
+  display: flex;
+  align-items: flex-end;
+  user-select: none;
+}
+
+.navbar-brand {
+  font-size: 16px!important;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  margin-top: 25px;
+}
+
+.form-container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 40px;
+  width: 450px;
+}
+
+.form-container > .form {
+  padding: 15px 25px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form-container > .form > h4 {
+  font-weight: 300;
+  font-size: 22px;
+  margin-bottom: 25px;
+}
+
+.form-button__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.demo {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.clear-button {
+  width: 120px;
+}
