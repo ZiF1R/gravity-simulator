@@ -15,59 +15,87 @@
 
     <nav class="bg-light">
       <a draggable="false" href="#" class="logo nav__logo navbar-brand">Gravity simulator</a>
+      <ul class="nav nav-pills mb-0" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="demo-1" data-bs-toggle="pill" data-bs-target="#demo-1-tab" type="button" role="tab" aria-controls="demo-1" aria-selected="true">Demo 1</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="demo-2" data-bs-toggle="pill" data-bs-target="#demo-2-tab" type="button" role="tab" aria-controls="demo-2" aria-selected="false">Demo 2</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="demo-3" data-bs-toggle="pill" data-bs-target="#demo-3-tab" type="button" role="tab" aria-controls="demo-3" aria-selected="false">Demo 3</button>
+        </li>
+      </ul>
     </nav>
 
     <main class="container">
-      <div class="form-container">
-        <form class="form create-form">
-          <h4>Create object</h4>
-          <div class="row g-3 mb-3">
-            <div class="col-auto">
-              <label for="radius" class="form-label">Radius</label>
-              <input type="number" class="form-control" value="10" min="10" max="50" id="radius">
-              <div class="form-text">From 10 to 50 pixels.</div>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="demo-1-tab" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+          <div class="demo first-demo">
+            <h2>Demonstration</h2>
+            <div class="container">
+              <canvas id="first-demo-canvas"></canvas>
             </div>
-
-            <div class="col-auto">
-              <label for="mass" class="form-label">Mass</label>
-              <input type="number" class="form-control" value="1" min="1" max="100" id="mass">
-              <div class="form-text">From 1 to 100 conventional units.</div>
+            <button class="refresh-first-demo refresh-button btn btn-primary mt-3">Refresh</button>
+          </div>
+        </div>
+        <div class="tab-pane fade show" id="demo-2-tab" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+          <div class="demo second-demo">
+            <h2>Demonstration</h2>
+            <div class="container">
+              <canvas id="second-demo-canvas"></canvas>
             </div>
+            <button class="refresh-second-demo refresh-button btn btn-primary mt-3">Refresh</button>
           </div>
-          <div class="mb-3">
-            <label for="color" class="form-label">Color</label>
-            <input type="color" class="form-control form-control-color" id="color" value="#563d7c">
+        </div>
+        <div class="tab-pane fade" id="demo-3-tab" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+          <div class="form-container">
+            <form class="form create-form">
+              <h4>Create object</h4>
+              <div class="row g-3 mb-3">
+                <div class="col-auto">
+                  <label for="radius" class="form-label">Radius</label>
+                  <input type="number" class="form-control" value="5" min="5" max="15" id="radius">
+                  <div class="form-text">From 5 to 15 pixels.</div>
+                </div>
+
+                <div class="col-auto">
+                  <label for="mass" class="form-label">Mass</label>
+                  <input type="number" class="form-control" value="1" min="1" max="100" id="mass">
+                  <div class="form-text">From 1 to 100 conventional units.</div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="color" class="form-label">Color</label>
+                <input type="color" class="form-control form-control-color" id="color" value="#563d7c">
+              </div>
+
+              <div class="form-button__container">
+                <button type="submit" class="form-button btn btn-primary">Create</button>
+              </div>
+            </form>
+
+            <span class="m-3">or</span>
+
+            <form class="form generate-form">
+              <h4>Generate objects</h4>
+              <div class="col-auto mb-3">
+                <label for="radius" class="form-label">Count</label>
+                <input type="number" class="form-control" value="1" min="1" max="100" id="count">
+                <div class="form-text">From 1 to 100 objects.</div>
+              </div>
+
+              <div class="form-button__container">
+                <button type="submit" class="form-button btn btn-primary">Generate</button>
+              </div>
+            </form>
           </div>
-
-          <div class="form-button__container">
-            <button type="submit" class="form-button btn btn-primary">Create</button>
-          </div>
-        </form>
-
-        <span class="m-3">or</span>
-
-        <form class="form generate-form">
-          <h4>Generate objects</h4>
-          <div class="col-auto mb-3">
-            <label for="radius" class="form-label">Count</label>
-            <input type="number" class="form-control" value="1" min="1" max="100" id="count">
-            <div class="form-text">From 1 to 100 objects.</div>
-          </div>
-
-          <div class="form-button__container">
-            <button type="submit" class="form-button btn btn-primary">Generate</button>
-          </div>
-        </form>
-      </div>
-
-      <div class="demo">
-        <h2>Demonstration</h2>
-        <canvas class="canvas"></canvas>
-        <button class="clear-button btn btn-primary mt-4">Clear</button>
+        </div>
       </div>
     </main>
 
-    <script src="./index.js"></script>
+    <script src="./demos/demo-1.js"></script>
+    <script src="./demos/demo-2.js"></script>
 
   </body>
 </html>
